@@ -91,7 +91,6 @@ Or reach Lucy directly:
 ---
 
 ## 📊 Evaluated Projects (Community Submissions)
-
 ```mermaid
 xychart-beta
     title "OSS Investment Scores — All Evaluated Projects"
@@ -99,7 +98,6 @@ xychart-beta
     y-axis "Weighted Score" 0 --> 10
     bar [8.9, 8.5, 8.10, 7.78, 7.55, 7.45, 7.23, 6.73, 6.35, 6.30, 6.15, 5.8, 5.54]
 ```
-
 ```mermaid
 quadrantChart
     title Independence vs. Investment Potential
@@ -142,6 +140,7 @@ quadrantChart
 | *(your project here)* | | | | | |
 
 *This table is updated as community submissions are reviewed. [Submit yours →](../../issues/new?template=submit-evaluation.md)*
+
 ---
 
 | *(your project here)* | | | | |
