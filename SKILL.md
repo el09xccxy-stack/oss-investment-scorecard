@@ -14,7 +14,7 @@ description: >
   The skill produces a structured 5-dimension weighted scorecard (max 10 pts), a pass/recommend/watch verdict, and an IC-ready one-paragraph thesis. It also flags one-vote-veto conditions that cause an immediate Pass regardless of total score.
 ---
 
-# Open Source Project Investment Scorecard
+# Open Source Project Investment Scorecard (V1.2)
 
 ## Purpose
 
@@ -24,9 +24,21 @@ Built from: Bessemer Venture Partners Data 3.0 Roadmap, Oxx VC, Basis Set Ventur
 
 ---
 
-## Step 1 — Macro Gate (Non-Scoring Pre-Check)
+## Step 1 — Pre-Evaluation Fact Sheet & Macro Gate
 
-Before scoring, answer these three binary questions. If any answer is NO, stop and recommend Pass.
+### 1.1 Pre-Evaluation Fact Sheet
+Before scoring, perform a web search to gather the following 7 items. Each item MUST include a source URL or be marked as "Searched, not found".
+
+1. **GitHub Metrics:** Stars, Monthly Active Contributors (last 30d), External Contributor %, Dependent Repositories.
+2. **Team Background:** Founders' prior OSS contributions, PMC/Committer status, prior infrastructure company experience.
+3. **Funding History:** Total raised, last round valuation, lead investors.
+4. **Commercial Traction:** Publicly mentioned ARR, customer logos, pricing model.
+5. **Technical Architecture:** Core innovation level (L1-L4), key benchmarks (e.g., SOTA claims).
+6. **Global Presence:** Documentation language, international contributor %, US customer presence.
+7. **Competitive Benchmarking:** Identify 2-3 closest rivals; note their funding, stars, and key distribution partners (e.g., AWS/Azure).
+
+### 1.2 Macro Gate (Non-Scoring Pre-Check)
+Answer these three binary questions. If any answer is NO, stop and recommend Pass.
 
 1. **Is the sub-sector still in its window-of-opportunity phase?**
    - Yes if: no single open-source project has monopolised the niche yet, OR the target IS that emerging monopolist.
@@ -37,10 +49,14 @@ Before scoring, answer these three binary questions. If any answer is NO, stop a
    - No if: the project is essentially a wrapper / prompt-engineering layer with no community moat.
 
 3. **Is the AI-cycle value premium applicable?**
-   - Higher than cloud-era because: the project sits on a structural chokepoint in the AI stack — examples include inference throughput optimisation, training data infrastructure, model/experiment lifecycle management, AI-native metadata governance, or hardware abstraction layers where the open-source project becomes the compatibility standard across chips and cloud platforms.
+   - Higher than cloud-era because: the project sits on a structural chokepoint in the AI stack.
    - If purely a cloud-era Open Core play with no AI-cycle differentiation, note this as a risk factor (not automatic veto).
 
-If all three pass → proceed to the five-dimension scorecard.
+**Handling "Not Found" items:**
+"Not Found" does NOT mean "Does not exist". If data is missing:
+- Look for **indirect signals** (e.g., SOC2 certification implies enterprise customers; complex billing implies revenue).
+- Use **range estimates** (e.g., "ARR likely $200K-$1M based on indirect signals").
+- Mark as a **DD Priority** for verification.
 
 ---
 
@@ -61,153 +77,94 @@ Score each dimension **0–10**. Apply weights. Sum for a weighted total out of 
 ### Dimension A — Open-Source Ecosystem & Community Health (25%)
 
 **Core principle: Keyboard Metrics > Mouse Metrics.**
-GitHub Stars are the most manipulable vanity metric. Prioritise the following in descending importance:
 
-| Signal | What to Look For | Strong (8-10) | Weak (<5) |
-|--------|-----------------|---------------|-----------|
-| Dependent Repositories | Projects that depend on this one in production | ≥1,000 | <10 |
-| Monthly Active Contributors | Unique devs with commits in last 30 days | ≥50 | <5 |
-| External Contributor % | Non-core-team share of commits | ≥40% | <10% |
-| PR Merge Latency | Avg days open→merged | ≤7 days | >30 days |
-| Issue Close Rate (90d) | % issues resolved | ≥60% | <20% |
-| Release Cadence | Regularity of versioned releases | Weekly/bi-weekly | Sporadic |
-| ADOPTERS.md / Enterprise Logos | Named production deployments | 5+ named logos | None |
-| Governance Tier | ASF TLP > ASF Incubator > CNCF > standalone | ASF TLP | No governance |
-| Stars — same-sector Share of Voice | Not absolute; compare to 3 closest rivals | Top-2 in niche | Bottom half |
-| Prestigious Backing | GitHub SOS Fund, CNCF Sandbox, LF project | Yes | No |
+| Signal | Strong (8-10) | Weak (<5) |
+|--------|---------------|-----------|
+| Dependent Repositories | ≥1,000 | <10 |
+| Monthly Active Contributors | ≥50 | <5 |
+| External Contributor % | ≥40% | <10% |
+| PR Merge Latency | ≤7 days | >30 days |
+| Issue Close Rate (90d) | ≥60% | <20% |
+| Release Cadence | Weekly/bi-weekly | Sporadic |
+| ADOPTERS.md / Logos | 5+ named logos | None |
+| Governance Tier | ASF TLP / CNCF | standalone |
 
-**Scoring guide:** Average the signals above. An ASF Top-Level Project graduation is worth +1 bonus point (rare, non-manipulable).
-
-**One-Vote Veto for A:** External contributor % <5% (pure self-directed project) → automatic Pass.
+**Scoring Guide:**
+- **Project Age Calibration:** For projects <12 months old, prioritize **velocity** over absolute levels. A project reaching 5K stars in 3 months has higher signal than 10K stars in 3 years. Velocity signal can add +1 to the score (max 8.0).
+- **One-Vote Veto for A:** External contributor % <5% (pure self-directed project) → automatic Pass.
 
 ---
 
 ### Dimension B — Team & Globalisation Capability (20%)
 
-Two sub-components weighted equally: **Engineering Depth** and **GTM/Global Reach**.
-
 **Engineering Depth signals:**
-- Founders are Apache/CNCF/Linux Foundation committers or PMC members in the relevant stack
-- Verifiable open-source contribution history (not just the company repo)
-- Top-tier academic papers with reproducible benchmarks (NeurIPS / ICML / ICLR / VLDB)
-- Prior experience at foundational data/AI infrastructure companies (Cloudera, Databricks, Hortonworks, Confluent, Anyscale equivalent)
+- Founders are Apache/CNCF/LF committers or PMC members.
+- Verifiable OSS history outside the company repo.
+- Top-tier academic papers (NeurIPS/ICML/VLDB).
 
 **GTM / Global Reach signals:**
-- English-first documentation and GitHub presence (Day 1)
-- International (non-founding-country) contributors ≥20% of community
-- US paying customers or US-based enterprise pilots
-- Founder network includes: top VC relationships, Fortune 500 engineering leaders, or prior role as LF/ASF committee chair
-- Cayman/Singapore holding structure already in place (or clear plan)
+- English-first documentation (Day 1).
+- International contributors ≥20%.
+- US paying customers or pilots.
 
-**Scoring guide:**
-- 9-10: World-class engineers who are also natural community builders with proven US enterprise access
-- 7-8: Strong engineering + partial GTM (needs one key hire)
-- 5-6: Strong engineering, weak GTM — flag as "Series A condition"
-- <5: Academic team with no commercial execution evidence
-
-**One-Vote Veto for B:** Zero verifiable open-source contribution history outside the company's own repo → automatic Pass.
+**Scoring Guide:**
+- 9-10: World-class engineers + proven US enterprise access.
+- 5-6: Strong engineering, weak GTM — flag as "Series A condition".
+- **One-Vote Veto for B:** Zero verifiable OSS history outside company repo → automatic Pass.
 
 ---
 
 ### Dimension C — Technical Moat & Market Positioning (20%)
 
-**Technology Layer Assessment (use highest applicable):**
-
 | Level | Description | VC Signal |
 |-------|-------------|-----------|
-| L1 | New algorithm / architecture (e.g., DeepGCNs, PagedAttention) | Strongest moat |
-| L2 | Significant engineering innovation on known approach | Strong moat |
-| L3 | Differentiated system integration / toolchain | Moderate moat |
-| L4 | Prompt engineering / fine-tuning only | Pass — no moat |
+| L1 | New algorithm / architecture | Strongest moat |
+| L2 | Significant engineering innovation | Strong moat |
+| L3 | Differentiated system integration | Moderate moat |
+| L4 | Prompt engineering / wrapper | Pass — no moat |
 
 **Market Positioning:**
-- Is this project on track to be the **de facto standard** in its niche?
-  - Evidence: independent benchmarks, neutral analyst reports, competitor integrations pointing TO this project
-- Does vendor-neutrality create structural lock-in? (Apache governance = enterprise procurement preference)
-- Is the sub-sector one of the high-value AI-cycle niches?
-  - AI Toolchain (RAG, eval, data synthesis) ✅
-  - Edge AI / on-device inference ✅
-  - Vertical Models with proprietary data ✅
-  - AI-native metadata / data governance ✅
-  - General-purpose LLM (competing with OpenAI/Google) ⚠️ very high bar
+- Is this on track to be the **de facto standard**?
+- Does vendor-neutrality create structural lock-in?
+- **Narrative Consistency:** ≥2 pivots in <24 months = -1 point penalty. *Note: Market-following pivots (e.g., RAG → Agent Memory) do not count as penalties.*
 
-**Narrative Consistency Check:**
-Count how many times the company's core value proposition has changed in public materials. ≥2 pivots in <24 months = -1 point penalty.
-
-**One-Vote Veto for C:** Core product is L4 (Prompt Engineering / fine-tuning wrapper) with no underlying algorithmic differentiation → automatic Pass.
+**One-Vote Veto for C:** Core product is L4 (Wrapper) with no algorithmic differentiation → automatic Pass.
 
 ---
 
 ### Dimension D — Commercialisation Path & PMF (20%)
 
-**Revenue Quality Hierarchy (highest = best for VC):**
+**Revenue Quality Hierarchy:**
+1. Product ARR / Subscription (8-15x)
+2. Usage-based / API billing (6-10x)
+3. Infrastructure embedding / OEM (Strategic premium)
+4. Proprietary data monetisation (High ceiling)
+5. Professional Services (1-3x) ⚠️ Not scalable
 
-| Rank | Type | VC Multiple | Note |
-|------|------|------------|------|
-| 1 | Product ARR / Subscription | 8-15x | Best — scales without headcount |
-| 2 | Usage-based / API billing | 6-10x | Good — correlates with value delivered |
-| 3 | Infrastructure embedding / OEM licensing | Strategic premium | Your engine embedded inside cloud or hardware vendor stacks (e.g., vLLM inside AWS, NVIDIA); licensing or rev-share model; valued on strategic control, not pure ARR multiple |
-| 4 | Proprietary data & model asset monetisation | High ceiling, emerging multiple | Selling curated training datasets, benchmark suites, or evaluation infrastructure to AI labs and enterprises; structurally valued in AI cycle but comp set is thin |
-| 5 | Professional Services | 1-3x | ⚠️ Not scalable — PS revenue caps out with team size; triggers mandatory product ARR conversion condition in term sheet |
-| 6 | Grants / non-dilutive only | 0x | ⚠️ Not VC-grade revenue |
+**Indirect PMF Signals (Use when ARR is unknown):**
+- SOC2 / HIPAA / ISO certification (implies enterprise readiness).
+- Tiered pricing / Stripe integration (implies active billing).
+- Detailed customer testimonials (not just generic quotes).
+- Hiring for Sales/GTM roles.
+*If 3+ indirect signals exist, D-score should not be below 5.0.*
 
-**Key metrics to gather and evaluate:**
-
-| Metric | Healthy Signal | Risk Signal |
-|--------|---------------|-------------|
-| ARR / revenue (last 12m) | Growing ≥50% YoY | Flat or declining |
-| Largest customer concentration | No single customer >30% | One customer >50% |
-| Customer geography | US-paying customers present | 100% non-US |
-| Gross margin | ≥70% (product), ≥50% (PS) | <40% |
-| Inbound % of pipeline | ≥50% inbound (community-driven) | 100% outbound |
-| Revenue type | Product ARR dominant | PS dominant |
-| Runway | ≥18 months post-raise | <12 months |
-
-**PS Revenue Special Rule:**
-PS revenue is not a veto, but it triggers a mandatory condition: in the term sheet, require conversion to ≥$Xk product ARR within 18 months. The threshold X = 50% of current PS ARR.
-
-**Scoring guide:**
-- 9-10: Product ARR ≥$1M with US enterprise customers, ≥50% inbound, no single customer >30%
-- 7-8: Early product ARR + strong PMF signals (Uber/Apple-calibre logos paying, even if small)
-- 5-6: PS revenue with credible enterprise logos OR product revenue <$500K
-- <5: No paid customers, or 100% grant-funded, or single customer >70%
-
-**One-Vote Veto for D:** Revenue entirely unverified (LoI/MOU only, no signed contracts) AND current valuation >2× sector median → automatic Pass.
+**Scoring Guide:**
+- 9-10: Product ARR ≥$1M, US enterprise customers, ≥50% inbound.
+- 7-8: Early product ARR + strong PMF signals (top-tier logos).
+- **One-Vote Veto for D:** Revenue entirely unverified (LoI/MOU only) AND valuation >2× sector median → automatic Pass.
 
 ---
 
 ### Dimension E — Capital Exit Path (15%)
 
-**Exit Path Matrix:**
+**Strategic M&A value checklist:**
+- Project is a "standard creator" (e.g., Iceberg, vLLM).
+- Acquirer has "must have" urgency.
+- **Sector Validation:** Large funding rounds for direct competitors (Series A+) are POSITIVE signals for sector value, even if they increase competition.
 
-| Path | Probability Triggers | Typical Valuation Driver |
-|------|---------------------|--------------------------|
-| Strategic M&A | Project = de facto standard OR team = acqui-hire grade | Strategic control premium (often >ARR multiple) |
-| IPO | ARR ≥$50M, growth ≥30%/yr, category leadership | ARR × 8-15x |
-| Secondary (VC→PE) | Stable growth + clear path, not IPO-ready | DCF + option value |
-| Follow-on rounds | Good progress, not yet exit-ready | Mark-up on next round |
-
-**Strategic M&A value checklist — score higher if:**
-- Project is the "Tabular to Databricks" analogue in its niche (infrastructure standard creator)
-- Acquirer has clear "must have or competitor gets it" urgency
-- Apache / CNCF governance means acquirer gets community credibility, not just code
-- Named enterprise customers are logos the acquirer wants in their annual report
-
-**Comparable exit anchors to use:**
-
-| Comparable | Exit | Key Logic |
-|-----------|------|-----------|
-| Tabular → Databricks | ~$2B | Creator of Iceberg standard → catalog control |
-| Red Hat → IBM | $34B | Enterprise Linux standard → platform lock-in |
-| GitHub → Microsoft | $7.5B | Developer workflow monopoly |
-| HashiCorp → IBM | $6.4B | Infra toolchain standard |
-| Databricks | $43B (private) | Data + AI platform standard |
-
-**Scoring guide:**
-- 9-10: Clear "must acquire" logic for 2+ named potential buyers; comparable exits >$1B
-- 7-8: Credible M&A story with 1-2 named buyers; or strong IPO path visible at Series B/C
-- 5-6: Acqui-hire probable; or M&A possible but buyer urgency low
-- <5: No credible exit path; project likely to be forked rather than acquired
+**Scoring Guide:**
+- 9-10: Clear "must acquire" logic; comparable exits >$1B.
+- 5-6: Acqui-hire probable; or M&A possible but buyer urgency low.
 
 ---
 
@@ -217,67 +174,22 @@ PS revenue is not a veto, but it triggers a mandatory condition: in the term she
 Total = (A × 0.25) + (B × 0.20) + (C × 0.20) + (D × 0.20) + (E × 0.15)
 ```
 
-**Decision thresholds:**
-
 | Score | Decision | Action |
 |-------|----------|--------|
-| 8.5 – 10.0 | 🟢 Strongly Recommend | Fast-track IC; move to term sheet |
-| 7.0 – 8.4 | 🟡 Recommend with Conditions | Proceed with milestone-linked terms |
-| 5.5 – 6.9 | 🟠 Watch / Track | Add to pipeline; re-evaluate in 6 months |
-| < 5.5 | 🔴 Pass | Decline; note reason for future reference |
-
-**One-Vote Vetoes (any = automatic Pass, overrides total score):**
-1. External contributor % <5%
-2. Zero verifiable engineering contribution history outside company repo
-3. Core product is L4 (Prompt Engineering only)
-4. Narrative pivot ≥3 times in <24 months
-5. Revenue entirely LoI/MOU only + valuation >2× sector median
-6. No English documentation AND zero international contributors — applies to any single-country project claiming global ambition
+| 8.5 – 10.0 | 🟢 Strongly Recommend | Fast-track IC |
+| 7.0 – 8.4 | 🟡 Recommend with Conditions | Milestone-linked terms |
+| 5.5 – 6.9 | 🟠 Watch / Track | Re-evaluate in 6 months |
+| < 5.5 | 🔴 Pass | Decline |
 
 ---
 
 ## Step 4 — Required Output Format
 
-Always produce output in this order:
-
-### 1. Macro Gate Result
-One sentence per question. State whether the project passes the gate.
-
-### 2. Scorecard Table
-
-| Dimension | Weight | Score | Weighted |
-|-----------|--------|-------|---------|
-| A. Open-Source Ecosystem | 25% | X/10 | X.XX |
-| B. Team & Globalisation | 20% | X/10 | X.XX |
-| C. Technical Moat | 20% | X/10 | X.XX |
-| D. Commercialisation & PMF | 20% | X/10 | X.XX |
-| E. Exit Path | 15% | X/10 | X.XX |
-| **Total** | 100% | — | **X.XX/10** |
-
-### 3. Verdict Line
-`🟢/🟡/🟠/🔴 [Decision] — [One sentence rationale]`
-
-### 4. Dimension Narrative
-For each dimension: 2-4 sentences covering the key evidence, the strongest signal, and the main risk. Be direct — do not soften risks.
-
-### 5. One-Vote Veto Check
-Explicitly confirm whether any veto condition is triggered.
-
-### 6. IC Thesis (one paragraph, ≤100 words)
-Suitable for verbal delivery in an Investment Committee. Structure: ① why now ② why this project ③ exit path conviction.
-
-### 7. DD Priority List
-Top 3-5 open questions that, if answered positively, would raise the score by ≥0.5 points. Ranked by importance.
-
-### 8. Watch Triggers (if verdict is Watch/Track)
-Specific, measurable milestones that, if hit, would upgrade to Recommend.
-
----
-
-## Calibration Reference: Scored Examples
-
-See `references/scored-examples.md` for:
-- **vLLM/Inferact: Total 8.9/10 → Strongly Recommend. Category-defining inference standard; 2,000+ contributors; a16z + Lightspeed validation. Strong open-source (7.5) and team (6.5) undercut by PMF (4.5) and three narrative pivots.
-- **Hugging Face: Total 8.5/10 → Strongly Recommend. $130M ARR, 10,000+ enterprise customers, Google/Amazon/NVIDIA as investors and distribution partners.
-
-These two cases define the calibration anchors for the scoring scale.
+1. **Macro Gate Result:** One sentence per question.
+2. **Scorecard Table:** Dimension, Weight, Score, Weighted.
+3. **Verdict Line:** `🟢/🟡/🟠/🔴 [Decision] — [One sentence rationale]`
+4. **Dimension Narrative:** 2-4 sentences per dimension. *Note: Explicitly mention if scores are based on indirect signals.*
+5. **One-Vote Veto Check:** Confirm if any veto is triggered.
+6. **IC Thesis:** One paragraph, ≤100 words (Why now, Why this, Exit conviction).
+7. **DD Priority List:** Top 3-5 questions to verify (especially "Not Found" items).
+8. **Watch Triggers:** Specific milestones for upgrade.
