@@ -7,6 +7,20 @@ Built from practice, not theory — calibrated against real deals including vLLM
 
 ---
 
+## 📢 V1.2 Update: From "Scoring Rubric" to "Diligence Protocol"
+
+**March 2026 Update:** We have officially released **V1.2** of the framework. This update is a structural leap designed to eliminate bias when evaluating early-stage projects (Seed/Series A) where public data is often scarce.
+
+**Key Improvements in V1.2:**
+- **Mandatory Fact Sheet:** A 7-item pre-evaluation gate including competitive benchmarking.
+- **Indirect Signal Inference:** Guidelines for using SOC2, billing complexity, and hiring signals to estimate traction when ARR is not public.
+- **Project Age Calibration:** Prioritizing **Velocity** over absolute levels for projects <12 months old.
+- **Narrative Pivot Exemptions:** Distinguishing market-following pivots from failure-driven ones.
+
+👉 **[View V1.2 Full Framework (SKILL.md)](SKILL.md)** | **[View V1.2 Release Notes](https://github.com/el09xccxy-stack/oss-investment-scorecard/releases/tag/v1.2)**
+
+---
+
 ## 📖 Framework Overview
 
 | Dimension | Weight | What It Measures |
@@ -31,7 +45,7 @@ Built from practice, not theory — calibrated against real deals including vLLM
 
 | File | Purpose |
 |------|---------|
-| [`SKILL.md`](SKILL.md) | Full scoring framework — works with Claude, GPT-4, Gemini, OpenClaw, Manus, or any LLM agent |
+| [`SKILL.md`](SKILL.md) | **V1.2 Full scoring framework** — works with Claude, GPT-4, Gemini, OpenClaw, Manus, or any LLM agent |
 | [`references/scored-examples.md`](references/scored-examples.md) | Calibration anchors: vLLM/Inferact (8.9/10) and Hugging Face (8.35/10) |
 | [`template/evaluation-template.md`](template/evaluation-template.md) | Blank scorecard — fill in and submit |
 
@@ -138,12 +152,6 @@ quadrantChart
 | [WFGY](cases/) | 5.8/10 | 🟠 Watch | W10 | @onestardao | 2026-03 |
 | [666ghj/MiroFish](https://github.com/el09xccxy-stack/agentvc-index/blob/main/cases/2026-03-23_mirofish.md) | 5.54/10 | 🟠 Watch | W13 | @lucycxy | 2026-03 |
 | *(your project here)* | | | | | |
-
-*This table is updated as community submissions are reviewed. [Submit yours →](../../issues/new?template=submit-evaluation.md)*
-
----
-
-| *(your project here)* | | | | |
 
 *This table is updated as community submissions are reviewed. [Submit yours →](../../issues/new?template=submit-evaluation.md)*
 
