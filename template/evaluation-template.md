@@ -157,6 +157,12 @@ Main risk:
 
 **Verdict:** ☐ 🟢 Strongly Recommend ☐ 🟡 Recommend with Conditions ☐ 🟠 Watch ☐ 🔴 Pass
 
+### Acqui-hire Candidate Check (v1.2+)
+
+If Dim B ≥ 7.5 AND Dim E ≥ 6.0 AND Weighted Total < 5.5:
+→ Flag as 🟡 **Acqui-hire Candidate** (in addition to Pass verdict)
+→ Note: project may generate positive seed-stage returns via talent acquisition despite failing standalone commercialization threshold.
+
 ---
 
 ## One-Vote Veto Checklist

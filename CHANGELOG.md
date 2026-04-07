@@ -19,6 +19,20 @@ Format: `[YYYY-MM] Type — Description — Contributor`
 
 ---
 
+## v1.2 Roadmap (Post Aryn Retrograde)
+
+Three framework gaps identified from the Aryn/Sycamore retrograde evaluation (W13):
+
+1. **Acqui-hire Candidate flag** — When Dim B (Team) ≥ 7.5 AND Dim E (Exit) ≥ 6.0, flag as "Acqui-hire Candidate" even if weighted total < 5.5. Current Pass verdict misclassifies teams with high acqui-hire value floor.
+
+2. **Dynamic dimension weights for pre-product stage** — Explore allowing Dim B weight to increase from 20% → 30% and Dim A (Ecosystem) to decrease from 25% → 15% for early-stage infrastructure projects where team IS the product.
+
+3. **Product-Market Fit Direction sub-indicator in Dim C** — Explicitly model the gap between technical vision and current market demand. "Tech direction right + product packaging wrong" ≠ "Tech direction wrong." Sycamore's end-to-end analytics vs. market's demand for point parsing is the canonical example.
+
+Triggered by: Aryn scored 5.13 (Pass), then was acquired by Glean ($7.2B) 3 weeks later. All 5 dimensions were directionally correct, but the final verdict was misleading for seed investors.
+
+---
+
 ## Pending Review
 
 *(Community submissions under review appear here before acceptance)*
