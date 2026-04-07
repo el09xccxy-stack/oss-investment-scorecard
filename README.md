@@ -105,13 +105,17 @@ Or reach Lucy directly:
 ---
 
 ## 📊 Evaluated Projects (Community Submissions)
+
+### Investment Scores Overview
 ```mermaid
 xychart-beta
-    title "OSS Investment Scores — All Evaluated Projects"
-    x-axis ["vLLM", "HuggingFace", "Unsloth", "LMCache", "Hindsight", "DeepAgents", "AReaL", "agentscope", "TradingAgents", "hermes-agent", "deer-flow", "WFGY", "MiroFish"]
+    title "OSS Investment Scores — Top Evaluated Projects"
+    x-axis ["vLLM", "HuggingFace", "Unsloth", "LMCache", "Hindsight", "DeepAgents", "AReaL", "AgentScope", "TradingAgents", "Hermes", "DeerFlow", "WFGY", "MiroFish", "Aryn"]
     y-axis "Weighted Score" 0 --> 10
-    bar [8.9, 8.5, 8.10, 7.78, 7.55, 7.45, 7.23, 6.73, 6.35, 6.30, 6.15, 5.8, 5.54]
+    bar [8.9, 8.5, 8.10, 7.78, 7.55, 7.45, 7.23, 6.73, 6.35, 6.30, 6.15, 5.8, 5.54, 5.13]
 ```
+
+### Potential vs. Independence Matrix
 ```mermaid
 quadrantChart
     title Independence vs. Investment Potential
@@ -128,12 +132,13 @@ quadrantChart
     Hindsight: [0.80, 0.78]
     DeepAgents: [0.55, 0.76]
     AReaL: [0.65, 0.76]
-    agentscope: [0.52, 0.68]
+    AgentScope: [0.52, 0.68]
     TradingAgents: [0.72, 0.62]
-    hermes-agent: [0.75, 0.60]
-    deer-flow: [0.15, 0.58]
+    Hermes: [0.75, 0.60]
+    DeerFlow: [0.15, 0.58]
     WFGY: [0.70, 0.55]
     MiroFish: [0.60, 0.52]
+    Aryn/Sycamore: [0.45, 0.51]
 ```
 
 | Project | Score | Verdict | Batch | Submitted by | Date |
@@ -151,6 +156,7 @@ quadrantChart
 | [bytedance/deer-flow](https://github.com/el09xccxy-stack/agentvc-index/blob/main/cases/2026-03-08_deer-flow.md) | 6.15/10 | 🟠 Watch ⚠️ Corp | W10 | @lucycxy | 2026-03 |
 | [WFGY](cases/) | 5.8/10 | 🟠 Watch | W10 | @onestardao | 2026-03 |
 | [666ghj/MiroFish](https://github.com/el09xccxy-stack/agentvc-index/blob/main/cases/2026-03-23_mirofish.md) | 5.54/10 | 🟠 Watch | W13 | @lucycxy | 2026-03 |
+| [Aryn / Sycamore](https://github.com/el09xccxy-stack/agentvc-index/blob/main/cases/aryn-sycamore-retrograde-W13.md) | 5.13/10 | 🔴 Pass | W13 v1.1 | @lucycxy | 2026-04 |
 | *(your project here)* | | | | | |
 
 *This table is updated as community submissions are reviewed. [Submit yours →](../../issues/new?template=submit-evaluation.md)*
@@ -171,4 +177,4 @@ MIT — use freely, attribution appreciated.
 
 ---
 
-*Maintained by Lucy Chen · [Zoo Capital](https://zoocap.com) · Last updated: March 2026*
+*Maintained by Lucy Chen · [Zoo Capital](https://zoocap.com) · Last updated: April 2026 (v1.2 Roadmap)*
