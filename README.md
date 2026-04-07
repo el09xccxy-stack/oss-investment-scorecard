@@ -106,40 +106,54 @@ Or reach Lucy directly:
 
 ## 📊 Evaluated Projects (Community Submissions)
 
-### Investment Scores Overview
-```mermaid
-xychart-beta
-    title "OSS Investment Scores — Top Evaluated Projects"
-    x-axis ["vLLM", "HuggingFace", "Unsloth", "LMCache", "Hindsight", "DeepAgents", "AReaL", "AgentScope", "TradingAgents", "Hermes", "DeerFlow", "WFGY", "MiroFish", "Aryn"]
-    y-axis "Weighted Score" 0 --> 10
-    bar [8.9, 8.5, 8.10, 7.78, 7.55, 7.45, 7.23, 6.73, 6.35, 6.30, 6.15, 5.8, 5.54, 5.13]
-```
+### Investment Scores Overview (Top Projects)
+
+| Project | Score | Visual Representation (0-10) |
+|:---|:---:|:---|
+| **vLLM / Inferact** | **8.90** | `██████████████████░░` |
+| **Hugging Face** | **8.50** | `█████████████████░░░` |
+| **Unsloth** | **8.10** | `████████████████░░░░` |
+| **LMCache** | **7.78** | `███████████████░░░░░` |
+| **Hindsight** | **7.55** | `███████████████░░░░░` |
+| **DeepAgents** | **7.45** | `██████████████░░░░░░` |
+| **AReaL** | **7.23** | `██████████████░░░░░░` |
+| **AgentScope** | **6.73** | `█████████████░░░░░░░` |
+| **TradingAgents** | **6.35** | `████████████░░░░░░░░` |
+| **Hermes Agent** | **6.30** | `████████████░░░░░░░░` |
+| **DeerFlow** | **6.15** | `████████████░░░░░░░░` |
+| **WFGY** | **5.80** | `███████████░░░░░░░░░` |
+| **MiroFish** | **5.54** | `███████████░░░░░░░░░` |
+| **Aryn / Sycamore** | **5.13** | `██████████░░░░░░░░░░` |
 
 ### Potential vs. Independence Matrix
+
 ```mermaid
 quadrantChart
-    title Independence vs. Investment Potential
-    x-axis Low Independence --> High Independence
-    y-axis Low Potential --> High Potential
-    quadrant-1 Invest Track
-    quadrant-2 Watch & Verify
-    quadrant-3 Pass
-    quadrant-4 Corp Asset
-    vLLM/Inferact: [0.90, 0.92]
-    HuggingFace: [0.85, 0.88]
-    Unsloth: [0.88, 0.85]
-    LMCache: [0.82, 0.82]
-    Hindsight: [0.80, 0.78]
-    DeepAgents: [0.55, 0.76]
-    AReaL: [0.65, 0.76]
-    AgentScope: [0.52, 0.68]
-    TradingAgents: [0.72, 0.62]
-    Hermes: [0.75, 0.60]
-    DeerFlow: [0.15, 0.58]
-    WFGY: [0.70, 0.55]
-    MiroFish: [0.60, 0.52]
-    Aryn/Sycamore: [0.45, 0.51]
+    title "Independence vs. Investment Potential (Numbered Map)"
+    x-axis "Low Independence" --> "High Independence"
+    y-axis "Low Potential" --> "High Potential"
+    quadrant-1 "Invest Track"
+    quadrant-2 "Watch & Verify"
+    quadrant-3 "Pass"
+    quadrant-4 "Corp Asset"
+    "1": [0.90, 0.92]
+    "2": [0.85, 0.88]
+    "3": [0.88, 0.85]
+    "4": [0.82, 0.82]
+    "5": [0.80, 0.78]
+    "6": [0.55, 0.76]
+    "7": [0.65, 0.76]
+    "8": [0.52, 0.68]
+    "9": [0.72, 0.62]
+    "10": [0.75, 0.60]
+    "11": [0.15, 0.58]
+    "12": [0.70, 0.55]
+    "13": [0.60, 0.52]
+    "14": [0.45, 0.51]
 ```
+
+**Legend:**
+1. vLLM | 2. HuggingFace | 3. Unsloth | 4. LMCache | 5. Hindsight | 6. DeepAgents | 7. AReaL | 8. AgentScope | 9. TradingAgents | 10. Hermes | 11. DeerFlow | 12. WFGY | 13. MiroFish | 14. Aryn/Sycamore
 
 | Project | Score | Verdict | Batch | Submitted by | Date |
 |---|---|---|---|---|---|
