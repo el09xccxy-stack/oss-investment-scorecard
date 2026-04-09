@@ -7,6 +7,13 @@ Built from practice, not theory — calibrated against real deals including vLLM
 
 ---
 
+---
+
+**About the author:** [Lucy Chen](https://linkedin.com/in/lucycxy) is an EIR (Entrepreneur in Residence) at [Zoo Capital](https://zoocap.com), a Singapore-based VC fund with USD $2B+ AUM focused on open-source AI investing. She has 15+ years in product commercialization and capital strategy, with two prior startup exits. This framework was developed from direct evaluation work — not synthesized from secondary sources.
+
+---
+
+
 ## 📢 V1.2 Update: From "Scoring Rubric" to "Diligence Protocol"
 
 **March 2026 Update:** We have officially released **V1.2** of the framework. This update is a structural leap designed to eliminate bias when evaluating early-stage projects (Seed/Series A) where public data is often scarce.
