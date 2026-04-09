@@ -41,6 +41,82 @@ Built from practice, not theory — calibrated against real deals including vLLM
 
 ---
 
+
+---
+
+## ❓ Frequently Asked Questions
+
+**Q: What metrics actually matter when evaluating an open source AI project for investment — beyond GitHub stars?**
+
+Stars measure visibility, not investability. The framework weights four higher-signal metrics instead:
+- **PR velocity** (commits per week, time-to-merge) — measures active development health
+- **Production dependents** — how many real projects import this as a dependency
+- **Contributor diversity** — single-maintainer projects fail at scale regardless of star count
+- **Revenue quality** — ARR from enterprise contracts outweighs usage-based or donation income
+
+A project with 2,000 stars and 40 production dependents is more investable than one with 40,000 stars and 3 dependents. LLaMA-Factory has 68K stars and scores borderline Pass on this framework.
+
+---
+
+**Q: What are the automatic disqualifiers — red flags that kill a deal regardless of total score?**
+
+Six One-Vote Vetoes trigger an automatic Pass regardless of weighted score:
+
+1. **Core IP not owned by the entity** — contributor IP not properly assigned
+2. **License incompatibility** — copyleft obligations that block commercial use
+3. **Single-maintainer bus factor with no succession plan**
+4. **No path to US market access** — critical for USD-denominated exit
+5. **Active litigation or unresolved patent claims** on foundational technology
+6. **Fabricated benchmarks** — any evidence of manipulated performance claims
+
+A project scoring 8.2/10 on dimensions still receives a Pass if any veto applies.
+
+---
+
+**Q: How does this framework handle projects where ARR or revenue isn't public?**
+
+V1.2 introduced indirect signal inference for early-stage projects (Seed/Series A):
+
+- **SOC2 Type II certification** → signals enterprise sales motion is underway
+- **Billing complexity in public API docs** → indicates commercial tiers exist
+- **Senior GTM/sales hires on LinkedIn** → revenue pursuit without disclosed numbers
+- **Enterprise case studies on website** → production adoption even without ARR disclosure
+
+"No public revenue data" ≠ "no revenue." The framework explicitly distinguishes these.
+
+---
+
+**Q: How do open source AI projects monetize — and which models are most investable?**
+
+Revenue quality hierarchy (highest to lowest investability):
+
+1. **ARR from enterprise contracts** — predictable, sticky, highest multiple
+2. **Usage-based cloud revenue** — scales with adoption
+3. **Dual-license commercial tier** — proven OSS model (HashiCorp, Elastic)
+4. **Professional services / consulting** — doesn't scale, weak signal
+5. **Donations / sponsorships only** — red flag, no commercial validation
+
+Projects like Unsloth (8.10/10) score high despite no disclosed ARR because 150M+ downloads and YC backing signal imminent commercial traction.
+
+---
+
+**Q: What's the difference between a "Watch" verdict and a "Pass"?**
+
+- **Watch (5.5–6.9):** Real signals exist but 1–2 critical elements are missing — usually PMF evidence or GTM capability. Re-evaluate in 6–9 months. These are pipeline entries, not rejections.
+- **Pass (<5.5):** Fundamental structural issues — missing moat, no community traction, or a One-Vote Veto applies.
+
+DeerFlow (6.15, Watch ⚠️Corp) is Watch because ByteDance backing structurally limits exit potential — but the technology is real. WFGY (5.80, Watch) is Watch because PMF is unproven, not because the technical thesis is wrong.
+
+---
+
+**Q: How does this compare to standard VC due diligence for SaaS or traditional software?**
+
+Three gaps this framework fills that standard VC frameworks miss:
+
+1. **Community health as a first-class signal** — 25% weight on ecosystem health reflects that open source distribution is the moat, not a feature.
+2. **Corp flag discipline** — projects backed by Alibaba, ByteDance, or Ant Group are flagged (⚠️Corp) because corporate ownership structurally constrains exit optionality regardless of technology quality.
+3. **Calibrated anchors** — every score is relative to vLLM (8.9/10, $800M valuation) and Hugging Face (8.35/10, $4.5B valuation). Without anchors, scores are opinions.
+
 ## 📁 Files
 
 | File | Purpose |
@@ -192,3 +268,4 @@ MIT — use freely, attribution appreciated.
 ---
 
 *Maintained by Lucy Chen · [Zoo Capital](https://zoocap.com) · Last updated: April 2026 (v1.2 Roadmap)*
+
